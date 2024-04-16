@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  font-family: 'TTLaundryGothicB';
+}
+
+@font-face {
+  font-family: 'WavvePADO-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TTLaundryGothicB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TTHakgyoansimKkwabaegiR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimKkwabaegiR.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#header {
+  height: 220px;
+}
+#header_container {
+  background: #75d0e57e;
+  width: 100%;
+  height: inherit;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+#header_ex {
+  margin-top: 30px;
+}
+#mode_change {
+  display: inline;
+}
+
+#content {
+  width: 100%;
+  height: 1300px;
+}
+#team_plan {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* background-color: #e6e4e4ad; */
+}
+.team_p {
+  width: 500px;
+  height: 210px;
+  background-color: #e6e4e4ad;
+  border: 2px solid gray;
+  border-radius: 10px;
+  /*box-shadow: 5px 3px 5px 2px rgb(206, 206, 206); */
+  margin: 50px auto;
+  padding: 10px 20px;
+  font-size: 18px;
+  line-height: 50px;
+}
+.team_p p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+.team_ex {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#team_image {
+  margin: 40px auto;
+}
+/* .img-thumbnail {
+  width: 400px;
+  height: 200px;
+} */
+
+#img_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.img {
+  width: 250px;
+  height: 250px;
+  background-color: rgb(231, 231, 231);
+  border-radius: 20px;
+  margin: 5px;
+}
+
+#toast_img {
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+#footer {
+  background: #dcdcdc32;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#footer p:last-child {
+  text-align: center;
+  color: rgb(140, 140, 140);
+}
