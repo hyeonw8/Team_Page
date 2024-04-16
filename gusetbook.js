@@ -66,11 +66,18 @@ function displayGuestbookEntry(docId, entry) {
     const guestbookEntriesDiv = document.getElementById("guestbook-entries");
     const entryDiv = document.createElement("div");
     entryDiv.classList.add("guestbook-entry");
-    entryDiv.innerHTML = `
-                <p><strong>${entry.name}</strong>: ${entry.message}</p>
-                <button class="edit-btn" data-doc-id="${docId}">수정</button>
-                <button class="delete-btn" data-doc-id="${docId}">삭제</button>
-            `;
+    entryDiv.innerHTML = `          
+     <div class="guestbook-container">  
+       <div class="nameMessage">
+         <p class="userName"><strong>${entry.name}</strong><br></p>
+         <p class="userMessage">${entry.message}</p>
+       </div>
+       <div class="buttons">
+         <button class="edit-btn" data-doc-id="${docId}">수정</button>
+         <button class="delete-btn" data-doc-id="${docId}">삭제</button>
+       </div>
+     </div>  
+     `;
     guestbookEntriesDiv.appendChild(entryDiv);
 }
 
@@ -114,22 +121,49 @@ document.addEventListener("click", async (event) => {
         const userPassword = userInfo.data().password;
 
         if (promptPassword == userPassword) {
-            const newMessage = window.prompt("메시지를 입력하세요:",);
+            // 새로운 textarea 생성
+             const textarea = document.createElement("textarea");
+             textarea.placeholder = "수정할 메시지를 입력하세요";
 
-            if (newMessage !== null) {
-                try {
-                    // Firestore에서 문서 업데이트
-                    await updateDoc(doc(db, "guestbook", docId), {
-                        message: newMessage
-                    });
-                    messageSpan.textContent = `${name}: ${newMessage}`;
-                    window.alert("메시지가 업데이트되었습니다.");
+            // 저장 버튼 생성
+             const saveButton = document.createElement("button");
+             saveButton.textContent = " 저장";
+             saveButton.classList.add("save-btn");
 
-                } catch (error) {
-                    console.error("Error updating document: ", error);
-                    window.alert("메시지를 업데이트하는 동안 오류가 발생했습니다.");
-                }
-            }
+             // textarea와 저장 버튼을 감싸는 div 생성
+             const textareaWrapper = document.createElement("div");
+             textareaWrapper.classList.add("textarea-wrapper");
+             textareaWrapper.appendChild(textarea);
+             textareaWrapper.appendChild(saveButton);
+
+             // 수정 버튼과 textarea, 저장 버튼을 하나의 div에 묶음
+             const editDiv = document.createElement("div");
+             editDiv.classList.add("edit-div");
+             editDiv.appendChild(textareaWrapper);
+
+             // 기존의 p 태그를 숨기고 수정 영역(div)을 추가함
+             messageParagraph.style.display = "none";
+             parentDiv.appendChild(editDiv);
+
+             // 저장 버튼 클릭 이벤트 처리
+             saveButton.addEventListener("click", async () => {
+                 const newMessage = textarea.value;
+                 try {
+                     // Firestore에서 문서 업데이트
+                     await updateDoc(doc(db, "guestbook", docId), {
+                         message: newMessage
+                     });
+                     // 업데이트된 메시지를 화면에 반영
+                     messageParagraph.textContent = newMessage;
+                     messageParagraph.style.display = ""; // p 태그 보이게 함
+                     editDiv.remove(); // 수정 영역(div) 제거
+                     window.alert("메시지가 업데이트되었습니다.");
+
+                 } catch (error) {
+                     console.error("Error updating document: ", error);
+                     window.alert("메시지를 업데이트하는 동안 오류가 발생했습니다.");
+                 }
+             });
         } else {
             window.alert("비밀번호를 잘못 입력하셨습니다.");
         }
