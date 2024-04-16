@@ -17,7 +17,12 @@
     />
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="mode.css" />
-    <link rel="stylesheet" href="guestbook.css">
+    <link rel="stylesheet" href="guestbook.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="popup.css" />
     <script>
       // jquery 이용
       // $(document).ready(function () {
@@ -37,10 +42,6 @@
       <!-- header -->
       <div id="header">
         <div id="header_container">
-          <!-- <label class="switch">
-            <input id="toggleBtn" type="checkbox" checked>
-            <span class="slider round"></span>
-          </label> -->
           <div class="form-check form-switch">
             <input
               class="form-check-input"
@@ -49,7 +50,6 @@
               id="flexSwitchCheckDefault"
             />
           </div>
-
           <div id="header_tit">
             <h1>열심히 하조의 페이지</h1>
           </div>
@@ -102,139 +102,272 @@
           <h3>✨ 열심히 하조의 조원을 소개합니다 ✨</h3>
         </div>
         <!-- 팀 이미지 -->
-        <div id="team_image">
-          <!-- 이미지 모달, 팝업 코드 작성 -->
-
-          <!-- 부트 스트랩 참고, 400*200이미지 -->
-          <!-- <div class="card" style="width: 18rem">
-            <img
-              src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/img1.png"
-              class="img-thumbnail"
-              alt="..."
+        <div class="popup-code">
+          <div class="section full-height">
+            <input
+              class="modal-btn"
+              type="checkbox"
+              id="modal-btn1"
+              name="modal-btn"
             />
-            <img
-              src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/img3.png"
-              class="img-thumbnail"
-              alt="..."
-            />
-            <img
-              src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/img4.png"
-              class="img-thumbnail"
-              alt="..."
-            />
-            <img
-              src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/img1.png"
-              class="img-thumbnail"
-              alt="..."
-            />
-            <img
-              src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/img1.png"
-              class="img-thumbnail"
-              alt="..."
-            />
-          </div> -->
-
-          <!-- 카드 이미지 스타일 -->
-          <!-- <div class="row row-cols-1 row-cols-md-5 g-4">
-            <div class="col">
-              <div class="card">
-                <img
-                  src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/img1.png"
-                  class="img-thumbnail"
-                  alt="..."
-                /> 
+            <label for="modal-btn1"
+              ><i class="uil uil-expand-arrows"></i
+            ></label>
+            <div class="modal">
+              <div class="modal-wrap">
+                <div class="container">
+                  <div class="column">
+                    <div class="card">
+                      <div class="img-container">
+                        <img
+                          src="https://www.w3schools.com/howto/img_avatar2.png"
+                        />
+                      </div>
+                      <div class="text">
+                        <h1>최보성</h1>
+                        <p>자신의 장점: 꾸준하고 성실함</p>
+                        <p>
+                          MBTI 및 자신의 대한 설명: INTP 혼자 여행다니는걸
+                          좋아함
+                        </p>
+                        <p>
+                          자신의 스타일, 협업 스타일: 의견을 적극적으로 내고
+                          들을려고 함
+                        </p>
+                        <div class="icons">
+                          <a
+                            href="https://velog.io/@choipoe/posts"
+                            target="_blank"
+                          >
+                            <i class="fa-solid fa-blog"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
-            </div>
-            <div class="col">
-              <div class="card">
-                <img
-                  src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/img1.png"
-                  class="img-thumbnail"
-                  alt="..."
-                /> 
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img
-                  src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/img1.png"
-                  class="img-thumbnail"
-                  alt="..."
-                /> 
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img
-                  src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/img1.png"
-                  class="img-thumbnail"
-                  alt="..."
-                /> 
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img
-                  src="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/free_photos/img1.png"
-                  class="img-thumbnail"
-                  alt="..."
-                /> 
-              </div>
-            </div>
-          </div> -->
-          <div id="img_content">
-            <div class="img_item">
-              <div class="img">
-                <!-- <img
-                  src=""
-                  class="img"
-                  alt="..."
-                />  -->
-              </div>
-            </div>
-            <div class="img_item">
-              <div class="img"></div>
-            </div>
-            <div class="img_item">
-              <div class="img"></div>
-            </div>
-            <div class="img_item">
-              <div class="img"></div>
-            </div>
-            <div class="img_item">
-              <div class="img"></div>
             </div>
           </div>
-          <div id="team_log"></div>
+          <div class="section full-height">
+            <input
+              class="modal-btn"
+              type="checkbox"
+              id="modal-btn1"
+              name="modal-btn"
+            />
+            <label for="modal-btn1"
+              ><i class="uil uil-expand-arrows"></i
+            ></label>
+            <div class="modal">
+              <div class="modal-wrap">
+                <div class="container">
+                  <div class="column">
+                    <div class="card">
+                      <div class="img-container">
+                        <img
+                          src="https://www.w3schools.com/howto/img_avatar2.png"
+                        />
+                      </div>
+                      <div class="text">
+                        <h1>최보성</h1>
+                        <p>자신의 장점: 꾸준하고 성실함</p>
+                        <p>
+                          MBTI 및 자신의 대한 설명: INTP 혼자 여행다니는걸
+                          좋아함
+                        </p>
+                        <p>
+                          자신의 스타일, 협업 스타일: 의견을 적극적으로 내고
+                          들을려고 함
+                        </p>
+                        <div class="icons">
+                          <a
+                            href="https://velog.io/@choipoe/posts"
+                            target="_blank"
+                          >
+                            <i class="fa-solid fa-blog"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section full-height">
+            <input
+              class="modal-btn"
+              type="checkbox"
+              id="modal-btn1"
+              name="modal-btn"
+            />
+            <label for="modal-btn1"
+              ><i class="uil uil-expand-arrows"></i
+            ></label>
+            <div class="modal">
+              <div class="modal-wrap">
+                <div class="container">
+                  <div class="column">
+                    <div class="card">
+                      <div class="img-container">
+                        <img
+                          src="https://www.w3schools.com/howto/img_avatar2.png"
+                        />
+                      </div>
+                      <div class="text">
+                        <h1>최보성</h1>
+                        <p>자신의 장점: 꾸준하고 성실함</p>
+                        <p>
+                          MBTI 및 자신의 대한 설명: INTP 혼자 여행다니는걸
+                          좋아함
+                        </p>
+                        <p>
+                          자신의 스타일, 협업 스타일: 의견을 적극적으로 내고
+                          들을려고 함
+                        </p>
+                        <div class="icons">
+                          <a
+                            href="https://velog.io/@choipoe/posts"
+                            target="_blank"
+                          >
+                            <i class="fa-solid fa-blog"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section full-height">
+            <input
+              class="modal-btn"
+              type="checkbox"
+              id="modal-btn1"
+              name="modal-btn"
+            />
+            <label for="modal-btn1"
+              ><i class="uil uil-expand-arrows"></i
+            ></label>
+            <div class="modal">
+              <div class="modal-wrap">
+                <div class="container">
+                  <div class="column">
+                    <div class="card">
+                      <div class="img-container">
+                        <img
+                          src="https://www.w3schools.com/howto/img_avatar2.png"
+                        />
+                      </div>
+                      <div class="text">
+                        <h1>최보성</h1>
+                        <p>자신의 장점: 꾸준하고 성실함</p>
+                        <p>
+                          MBTI 및 자신의 대한 설명: INTP 혼자 여행다니는걸
+                          좋아함
+                        </p>
+                        <p>
+                          자신의 스타일, 협업 스타일: 의견을 적극적으로 내고
+                          들을려고 함
+                        </p>
+                        <div class="icons">
+                          <a
+                            href="https://velog.io/@choipoe/posts"
+                            target="_blank"
+                          >
+                            <i class="fa-solid fa-blog"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section full-height">
+            <input
+              class="modal-btn"
+              type="checkbox"
+              id="modal-btn1"
+              name="modal-btn"
+            />
+            <label for="modal-btn1"
+              ><i class="uil uil-expand-arrows"></i
+            ></label>
+            <div class="modal">
+              <div class="modal-wrap">
+                <div class="container">
+                  <div class="column">
+                    <div class="card">
+                      <div class="img-container">
+                        <img
+                          src="https://www.w3schools.com/howto/img_avatar2.png"
+                        />
+                      </div>
+                      <div class="text">
+                        <h1>최보성</h1>
+                        <p>자신의 장점: 꾸준하고 성실함</p>
+                        <p>
+                          MBTI 및 자신의 대한 설명: INTP 혼자 여행다니는걸
+                          좋아함
+                        </p>
+                        <p>
+                          자신의 스타일, 협업 스타일: 의견을 적극적으로 내고
+                          들을려고 함
+                        </p>
+                        <div class="icons">
+                          <a
+                            href="https://velog.io/@choipoe/posts"
+                            target="_blank"
+                          >
+                            <i class="fa-solid fa-blog"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- 방명록 -->
         <div id="guestbook">
+          <h1 id="guestbook-section"><span>💬</span> 방명록</h1>
 
-        <h1 id="guestbook-section"><span>💬</span> 방명록</h1>
-    
-    
-        <form id="guestbook-form">
-          <div class="name-password">
-            <div class="user-info">
-              <label for="name"><strong>이름</strong></label><br>
-              <input type="text" id="name" name="name" required><br>
+          <form id="guestbook-form">
+            <div class="name-password">
+              <div class="user-info">
+                <label for="name"><strong>이름</strong></label
+                ><br />
+                <input type="text" id="name" name="name" required /><br />
+              </div>
+              <div>
+                <label for="password"><strong>비밀번호</strong></label
+                ><br />
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  minlength="4"
+                  required
+                /><br />
+              </div>
             </div>
-            <div>
-              <label for="password"><strong>비밀번호</strong></label><br>
-              <input type="password" id="password" name="password" minlength="4" required><br>
-            </div>
+
+            <label for="message">메시지</label><br />
+            <textarea id="message" name="message" rows="4" required></textarea
+            ><br />
+            <button type="submit">등록</button>
+          </form>
+
+          <div id="guestbook-entries">
+            <!-- firebase로부터 받은 방명록 항목 표시 -->
           </div>
-    
-          <label for="message">메시지</label><br>
-          <textarea id="message" name="message" rows="4" required></textarea><br>
-          <button type="submit">등록</button>
-        </form>
-    
-        <div id="guestbook-entries">
-          <!-- firebase로부터 받은 방명록 항목 표시 -->
         </div>
-      </div>
         <!-- footer -->
         <div id="footer">
           <div>
