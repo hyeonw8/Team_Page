@@ -2,14 +2,7 @@
   margin: 0;
   font-family: 'TTLaundryGothicB';
 }
-
-@font-face {
-  font-family: 'WavvePADO-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2')
-    format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
+/* 폰트 */
 @font-face {
   font-family: 'TTLaundryGothicB';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2')
@@ -25,6 +18,7 @@
   font-style: normal;
 }
 
+/* header */
 #header {
   height: 220px;
 }
@@ -39,6 +33,8 @@
   align-items: center;
   justify-content: center;
 }
+
+/* h1, 제목 */
 h1 {
   font-size: 40px;
   font-weight: 700;
@@ -46,14 +42,30 @@ h1 {
 #header_ex {
   margin-top: 30px;
 }
-#mode_change {
-  display: inline;
+
+/* 토스트 팝업 */
+.form {
+  align-items: left;
+}
+.form-check-input {
+  width: 3em;
+  height: 25px;
+}
+#toast_img {
+  margin-right: 10px;
 }
 
+.toast-container {
+  position: fixed;
+}
+
+/* content 전체 설정 */
 #content {
   width: 100%;
   height: 1300px;
 }
+
+/* team 약속, 목표  */
 #team_plan {
   display: flex;
   flex-direction: row;
@@ -79,11 +91,13 @@ h1 {
   margin: 10px auto;
 }
 
+/* 팀 소개글 */
 .team_ex {
   text-align: center;
   margin-top: 50px;
 }
 
+/* 팀 이미지 */
 #team_image {
   margin: 40px auto;
 }
@@ -91,26 +105,17 @@ h1 {
   width: 400px;
   height: 200px;
 } */
-
 #img_content {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-
 .img {
   width: 250px;
   height: 250px;
   background-color: rgb(231, 231, 231);
   border-radius: 20px;
   margin: 5px;
-}
-
-#toast_img {
-  width: 15px;
-  height: 15px;
-  border-radius: 5px;
-  margin-right: 10px;
 }
 
 #footer {
@@ -124,4 +129,10 @@ h1 {
 #footer p:last-child {
   text-align: center;
   color: rgb(140, 140, 140);
+}
+
+/* dark mode */
+.dark-mode {
+  background-color: black;
+  color: #fff;
 }
