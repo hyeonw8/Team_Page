@@ -135,11 +135,6 @@
              textareaWrapper.appendChild(textarea);
              textareaWrapper.appendChild(saveButton);
 
-             // 수정 버튼과 textarea, 저장 버튼을 하나의 div에 묶음
-             const editDiv = document.createElement("div");
-             editDiv.classList.add("edit-div");
-             editDiv.appendChild(textareaWrapper);
-
              // 기존의 p 태그를 숨기고 수정 영역(div)을 추가함
              messageParagraph.style.display = "none";
              parentDiv.appendChild(editDiv);
