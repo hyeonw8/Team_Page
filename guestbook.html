@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="guestbook">
+
+        <h1 id="guestbook-section"><span>💬</span> 방명록</h1>
+
+
+        <form id="guestbook-form">
+            <div class="name-password">
+                <div class="user-info">
+                    <label for="name"><strong>이름</strong></label><br>
+                    <input type="text" id="name" name="name" required><br>
+                </div>
+                <div>
+                    <label for="password"><strong>비밀번호</strong></label><br>
+                    <input type="password" id="password" name="password" minlength="4" required><br>
+                </div>
+            </div>
+
+            <label for="message">메시지</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+            <button type="submit">등록</button>
+        </form>
+
+        <div id="guestbook-entries">
+            <!-- firebase로부터 받은 방명록 항목 표시 -->
+        </div>
+    </div>
+    <script type="module" src="gusetbook.js"></script>
+
+
+</body>
+
+</html>
