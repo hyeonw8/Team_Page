@@ -137,7 +137,7 @@
 
              // 기존의 p 태그를 숨기고 수정 영역(div)을 추가함
              messageParagraph.style.display = "none";
-             parentDiv.appendChild(editDiv);
+             parentDiv.appendChild(textareaWrapper);
 
              // 저장 버튼 클릭 이벤트 처리
              saveButton.addEventListener("click", async () => {
@@ -150,7 +150,7 @@
                      // 업데이트된 메시지를 화면에 반영
                      messageParagraph.textContent = newMessage;
                      messageParagraph.style.display = ""; // p 태그 보이게 함
-                     editDiv.remove(); // 수정 영역(div) 제거
+                     textareaWrapper.remove(); // 수정 영역(div) 제거
                      window.alert("메시지가 업데이트되었습니다.");
 
                  } catch (error) {
