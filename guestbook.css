@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 방명록 폼 */
+#guestbook {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#guestbook-section {
+    width: 800px;
+    text-align: left;
+    margin: 30px auto;
+}
+
+#guestbook-form {
+    width: 800px;
+    margin: 20px auto 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#guestbook-form input[type="text"],
+#guestbook-form input[type="password"] {
+    padding: 5px;
+    margin: 10px 0px;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.name-password {
+    display: flex;
+}
+
+.user-info {
+    margin-right: 30px;
+}
+
+#guestbook-form textarea {
+    width: 100%;
+    margin: 10px 0px;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    resize: none;
+}
+
+#guestbook-form label[for="name"] {
+    color: #333;
+}
+
+#guestbook-form>button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#guestbook-form>button[type="submit"]:hover {
+    background-color: #0158b4;
+}
+
+/* 방명록 표시 */
+
+#guestbook-entries {
+    margin: 20px auto 40px;
+}
+
+.guestbook-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 820px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.guestbook-entry p {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.guestbook-entry strong {
+    color: #333;
+}
+
+/* 삭제버튼 */
+.delete-btn {
+    background-color: rgb(241, 81, 81);
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.delete-btn:hover {
+    background-color: rgb(212, 35, 35);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 수정버튼 */
+.edit-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-btn:hover {
+    background-color: #0158b4;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
