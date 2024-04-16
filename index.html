@@ -17,6 +17,7 @@
     />
     <link rel="stylesheet" href="main.css" />
     <link rel="stylesheet" href="mode.css" />
+    <link rel="stylesheet" href="guestbook.css">
     <script>
       // jquery 이용
       // $(document).ready(function () {
@@ -207,6 +208,33 @@
           </div>
           <div id="team_log"></div>
         </div>
+        <!-- 방명록 -->
+        <div id="guestbook">
+
+        <h1 id="guestbook-section"><span>💬</span> 방명록</h1>
+    
+    
+        <form id="guestbook-form">
+          <div class="name-password">
+            <div class="user-info">
+              <label for="name"><strong>이름</strong></label><br>
+              <input type="text" id="name" name="name" required><br>
+            </div>
+            <div>
+              <label for="password"><strong>비밀번호</strong></label><br>
+              <input type="password" id="password" name="password" minlength="4" required><br>
+            </div>
+          </div>
+    
+          <label for="message">메시지</label><br>
+          <textarea id="message" name="message" rows="4" required></textarea><br>
+          <button type="submit">등록</button>
+        </form>
+    
+        <div id="guestbook-entries">
+          <!-- firebase로부터 받은 방명록 항목 표시 -->
+        </div>
+      </div>
         <!-- footer -->
         <div id="footer">
           <div>
@@ -219,7 +247,7 @@
         </div>
       </div>
     </div>
-    
+    <script type="module" src="gusetbook.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
