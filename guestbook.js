@@ -5,13 +5,13 @@
  // Firebase 구성 정보 설정
  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: config.apiKey,
-    authDomain: config.authDomain,
-    projectId: config.projectId,
-    storageBucket: config.storageBucket,
-    messagingSenderId: config.measurementId,
-    appId: config.appId,
-    measurementId: config.measurementId
+    apiKey: "AIzaSyDk1C8F0t_ubSIX2jB3l2ijm6vALHTYSP0",
+    authDomain: "sparta-26a3f.firebaseapp.com",
+    projectId: "sparta-26a3f",
+    storageBucket: "sparta-26a3f.appspot.com",
+    messagingSenderId: "921839954023",
+    appId: "1:921839954023:web:c10addde3cf01b18b88cc2",
+    measurementId: "G-PENKWVQ51X"
 };
 
 
