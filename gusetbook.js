@@ -115,6 +115,12 @@ document.addEventListener("click", async (event) => {
         const parentDiv = event.target.parentElement; // 수정 버튼의 부모 요소인 div 가져오기
         const messageSpan = parentDiv.querySelector("p"); // 해당하는 부모요소에서 메시지 <p> 요소
 
+        // 이미 textarea가 존재하는지 확인
+        const existingTextarea = parentDiv.querySelector(".textarea-wrapper textarea");
+        if (existingTextarea) {
+            return; // 이미 textarea가 있으면 함수를 종료
+        }
+        
         const name = messageSpan.textContent.split(": ")[0];
         const promptPassword = window.prompt("비밀번호를 입력하세요.",);
         const userInfo = await getDoc(doc(db, "guestbook", docId));
