@@ -333,6 +333,7 @@
           </div>
         </div>
         <!-- 방명록 -->
+        <button id="toggleBtn" type="button">방명록 끄기</button>
         <div id="guestbook">
           <h1 id="guestbook-section"><span>💬</span> 방명록</h1>
 
@@ -381,5 +382,15 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script>
+      $(document).ready(function () {
+        $("#toggleBtn").click(function () {
+          $("#guestbook").toggle(); // 방명록 가시성 토글
+          $(this).text(function (index, text) {
+            return text === "방명록 켜기" ? "방명록 끄기" : "방명록 켜기"; // 버튼 텍스트 토글
+          });
+        });
+      });
+  </script>
   </body>
 </html>
