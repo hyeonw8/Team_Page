@@ -137,6 +137,9 @@ body {
 /* 방명록 표시 */
 #guestbook-entries {
   margin: 20px auto 40px;
+  /* 세로 스크롤 활성화 */
+  height: 360px;
+  overflow-y: auto;
 }
 
 .guestbook-container {
