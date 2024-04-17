@@ -21,14 +21,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css"
+    />
     <link rel="stylesheet" href="popup.css" />
     <script>
-      document.addEventListener('DOMContentLoaded', (event) => {
-        const toastElList = [].slice.call(document.querySelectorAll('.toast'));
-        const toastList = toastElList.map(function (toastEl) {
-          return new bootstrap.Toast(toastEl);
-        });
-        toastList.forEach((toast) => toast.show());
+      document.addEventListener('DOMContentLoaded', () => {
+        let myAlert = document.querySelector('.toast');
+        let bsAlert = new bootstrap.Toast(myAlert);
+        bsAlert.show();
       });
     </script>
   </head>
@@ -97,9 +99,7 @@
               id="modal-btn1"
               name="modal-btn"
             />
-            <label for="modal-btn1"
-              ><i class="uil uil-expand-arrows"></i
-            ></label>
+            <label class="img1" for="modal-btn1"></label>
             <div class="modal">
               <div class="modal-wrap">
                 <div class="container">
@@ -107,7 +107,103 @@
                     <div class="card">
                       <div class="img-container">
                         <img
-                          src="https://www.w3schools.com/howto/img_avatar2.png"
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbko9_8nC2Lfmn3JINo14lDLTvl2BzOmpih_Of5EGcRw&s"
+                        />
+                      </div>
+                      <div class="text">
+                        <h1>임종하</h1>
+                        <p>
+                          자신의 장점: 저는 어떤 일을 할 때에는 그 일에 대한
+                          책임감을 느끼며 최선을 다하는 편입니다. 제가 맡은
+                          업무나 의무에는 끝까지 책임을 지고, 그 결과에 대해
+                          책임을 느끼며 행동합니다.
+                        </p>
+                        <p>
+                          MBTI 및 자신의 대한 설명: ISFP 상대방을 잘 이해하고
+                          공감을 잘하는 편입니다.
+                        </p>
+                        <p>
+                          자신의 스타일, 협업 스타일: 저는 협업을 할 때 맡은
+                          일을 완료한 후에, 팀원들의 프로젝트에 도움이 필요할 때
+                          도움을 주는 스타일 입니다.
+                        </p>
+                        <div class="icons">
+                          <a
+                            href="https://fe-jogha.tistory.com/"
+                            target="_blank"
+                          >
+                            <i class="fa-solid fa-blog"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section full-height">
+            <input
+              class="modal-btn"
+              type="checkbox"
+              id="modal-btn2"
+              name="modal-btn"
+            />
+            <label class="img2" for="modal-btn2"></label>
+            <div class="modal">
+              <div class="modal-wrap">
+                <div class="container">
+                  <div class="column">
+                    <div class="card">
+                      <div class="img-container">
+                        <img
+                          src="https://velog.velcdn.com/images/hyeonw8/profile/2dfb442b-99bd-4901-8029-353b619268bb/image.jpeg"
+                        />
+                      </div>
+                      <div class="text">
+                        <h1>조현경</h1>
+                        <p>자신의 장점: 세심함, 관찰력</p>
+                        <p>
+                          MBTI 및 자신의 대한 설명: INFJ 일단 계획을 해야 뭐든
+                          할 수 있는 스타일이고, 메모를 자주합니다..! 뭐든..!
+                        </p>
+                        <p>
+                          자신의 스타일, 협업 스타일: 맡은 일이 생기면 최대한
+                          해내려고 노력하는 편입니다 👊
+                        </p>
+                        <div class="icons">
+                          <a
+                            href="https://velog.io/@hyeonw8/posts"
+                            target="_blank"
+                          >
+                            <i class="fa-solid fa-blog"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section full-height">
+            <input
+              class="modal-btn"
+              type="checkbox"
+              id="modal-btn3"
+              name="modal-btn"
+            />
+            <label class="img3" for="modal-btn3"></label>
+            <div class="modal">
+              <div class="modal-wrap">
+                <div class="container">
+                  <div class="column">
+                    <div class="card">
+                      <div class="img-container">
+                        <img
+                          src="https://cdns-images.dzcdn.net/images/artist/238f5524a401dfdd5cac685f0f7989bd/264x264.jpg"
                         />
                       </div>
                       <div class="text">
@@ -136,16 +232,15 @@
               </div>
             </div>
           </div>
+
           <div class="section full-height">
             <input
               class="modal-btn"
               type="checkbox"
-              id="modal-btn1"
+              id="modal-btn4"
               name="modal-btn"
             />
-            <label for="modal-btn1"
-              ><i class="uil uil-expand-arrows"></i
-            ></label>
+            <label class="img4" for="modal-btn4"></label>
             <div class="modal">
               <div class="modal-wrap">
                 <div class="container">
@@ -153,23 +248,27 @@
                     <div class="card">
                       <div class="img-container">
                         <img
-                          src="https://www.w3schools.com/howto/img_avatar2.png"
+                          src="https://search.pstatic.net/common/?src=http://blogfiles.naver.net/MjAyNDAzMTJfNTAg/MDAxNzEwMjI4MTI4NDUy.7Yh-L0x-kdwNVguROM7Mt-HXSDwsLLIaNwztWy5rRc8g.4sClDH2kV3FyG8mP2NMgOHAwVod4OU9Vyr70Rhe-kwwg.JPEG/KakaoTalk_20240312_155838942_15.jpg&type=ff332_332"
                         />
                       </div>
                       <div class="text">
-                        <h1>최보성</h1>
+                        <h1>윤새라</h1>
                         <p>자신의 장점: 꾸준하고 성실함</p>
                         <p>
-                          MBTI 및 자신의 대한 설명: INTP 혼자 여행다니는걸
-                          좋아함
+                          MBTI 및 자신의 대한 설명: ISFP 현재 순간에 집중하고
+                          개인적인 자유를 중시합니다. 인간관계는 내성적이면서
+                          감성적인 접근을 합니다.
                         </p>
                         <p>
-                          자신의 스타일, 협업 스타일: 의견을 적극적으로 내고
-                          들을려고 함
+                          자신의 스타일, 협업 스타일: 독립적인 환경에서
+                          작업하며, 중요한 결정이나 프로젝트를 처리할 때 필요한
+                          모든 정보를 고려하여 결과를 도출할때 고의적으로 시간을
+                          두고 생각합니다. 협업 시 갈등을 최소화 하는데 중점을
+                          둡니다. 각자의 역할을 존중하며 협력합니다.
                         </p>
                         <div class="icons">
                           <a
-                            href="https://velog.io/@choipoe/posts"
+                            href="https://blog.naver.com/tofk999"
                             target="_blank"
                           >
                             <i class="fa-solid fa-blog"></i>
@@ -182,16 +281,15 @@
               </div>
             </div>
           </div>
+
           <div class="section full-height">
             <input
               class="modal-btn"
               type="checkbox"
-              id="modal-btn1"
+              id="modal-btn5"
               name="modal-btn"
             />
-            <label for="modal-btn1"
-              ><i class="uil uil-expand-arrows"></i
-            ></label>
+            <label class="img5" for="modal-btn5"></label>
             <div class="modal">
               <div class="modal-wrap">
                 <div class="container">
@@ -199,115 +297,28 @@
                     <div class="card">
                       <div class="img-container">
                         <img
-                          src="https://www.w3schools.com/howto/img_avatar2.png"
+                          src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbJXIsb%2FbtsGIWPnmf4%2FzCUIlVhxihmM4ubvYvO4n1%2Fimg.png"
                         />
                       </div>
                       <div class="text">
-                        <h1>최보성</h1>
-                        <p>자신의 장점: 꾸준하고 성실함</p>
+                        <h1>전재연</h1>
                         <p>
-                          MBTI 및 자신의 대한 설명: INTP 혼자 여행다니는걸
-                          좋아함
+                          자신의 장점: 한번 맡은 일은 시간이 걸리더라도 해내는
+                          편입니다.
                         </p>
                         <p>
-                          자신의 스타일, 협업 스타일: 의견을 적극적으로 내고
-                          들을려고 함
-                        </p>
-                        <div class="icons">
-                          <a
-                            href="https://velog.io/@choipoe/posts"
-                            target="_blank"
-                          >
-                            <i class="fa-solid fa-blog"></i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section full-height">
-            <input
-              class="modal-btn"
-              type="checkbox"
-              id="modal-btn1"
-              name="modal-btn"
-            />
-            <label for="modal-btn1"
-              ><i class="uil uil-expand-arrows"></i
-            ></label>
-            <div class="modal">
-              <div class="modal-wrap">
-                <div class="container">
-                  <div class="column">
-                    <div class="card">
-                      <div class="img-container">
-                        <img
-                          src="https://www.w3schools.com/howto/img_avatar2.png"
-                        />
-                      </div>
-                      <div class="text">
-                        <h1>최보성</h1>
-                        <p>자신의 장점: 꾸준하고 성실함</p>
-                        <p>
-                          MBTI 및 자신의 대한 설명: INTP 혼자 여행다니는걸
-                          좋아함
+                          MBTI 및 자신의 대한 설명: ISFP 초반에 낮가리지만 뒤로
+                          갈수록 말이 많아지는 편, 좋아하는 분야에 대해서는 깊게
+                          파고드는것 같아요 :)
                         </p>
                         <p>
-                          자신의 스타일, 협업 스타일: 의견을 적극적으로 내고
-                          들을려고 함
+                          자신의 스타일, 협업 스타일: 느리지만 꾸준히 가는
+                          스타일 / 한참 생각하다가 아이디어가 나올때 그때서야
+                          속도를 올립니다.
                         </p>
                         <div class="icons">
                           <a
-                            href="https://velog.io/@choipoe/posts"
-                            target="_blank"
-                          >
-                            <i class="fa-solid fa-blog"></i>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="section full-height">
-            <input
-              class="modal-btn"
-              type="checkbox"
-              id="modal-btn1"
-              name="modal-btn"
-            />
-            <label for="modal-btn1"
-              ><i class="uil uil-expand-arrows"></i
-            ></label>
-            <div class="modal">
-              <div class="modal-wrap">
-                <div class="container">
-                  <div class="column">
-                    <div class="card">
-                      <div class="img-container">
-                        <img
-                          src="https://www.w3schools.com/howto/img_avatar2.png"
-                        />
-                      </div>
-                      <div class="text">
-                        <h1>최보성</h1>
-                        <p>자신의 장점: 꾸준하고 성실함</p>
-                        <p>
-                          MBTI 및 자신의 대한 설명: INTP 혼자 여행다니는걸
-                          좋아함
-                        </p>
-                        <p>
-                          자신의 스타일, 협업 스타일: 의견을 적극적으로 내고
-                          들을려고 함
-                        </p>
-                        <div class="icons">
-                          <a
-                            href="https://velog.io/@choipoe/posts"
+                            href="https://yeonii91.tistory.com/"
                             target="_blank"
                           >
                             <i class="fa-solid fa-blog"></i>
@@ -358,9 +369,6 @@
         <!-- footer -->
         <div id="footer">
           <div>
-            <!-- footer 부분은 방명록하실때 간격 더 뒤로 밀고 쓰시거나
-                불편하시면 그냥 지우고 하셔도 될 것 같아요! 
-                일단은 레이아웃 잡느라 적어두겠습니당 -->
             <p>개발자가 되기 위한 열정이 담긴 페이지</p>
             <p>@team_열심히 하조</p>
           </div>
