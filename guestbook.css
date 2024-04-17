@@ -33,46 +33,6 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-/* 수정 입력창 */
-        .textarea-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-            /* 수직 가운데 정렬 */
-        }
-
-        .textarea-wrapper textarea {
-            flex: 1;
-            width: calc(100% - 56px);
-            /* 버튼 너비를 제외한 나머지 영역 */
-            height: 60px;
-            margin: 10px 0px;
-            border: 1px solid #d4d4d4;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .textarea-wrapper .save-btn {
-            position: absolute;
-            top: 50%;            
-            right: 0;
-            transform: translateY(-50%);                        
-            background-color: rgb(130, 216, 2);
-            color: white;
-            width: 56px;
-            height: 50px;
-            border: none;
-            padding: 10px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-right: 10px;
-        }
-
-        .textarea-wrapper .save-btn:hover {
-            background-color: rgb(77, 128, 0);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
 
 .name-password {
     display: flex;
@@ -115,7 +75,7 @@ body {
     margin: 20px auto 40px;
 }
 
-.guestbook-entry {
+.guestbook-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -127,15 +87,20 @@ body {
     margin-bottom: 10px;
 }
 
-.guestbook-entry p {
+.guestbook-container p {
     margin: 0;
     padding: 0;
     flex: 1;
 }
 
-.guestbook-entry strong {
+.guestbook-container strong {
     color: #333;
 }
+
+.nameMessage .userName {
+    margin-bottom: 10px;
+}
+
 
 /* 삭제버튼 */
 .delete-btn {
@@ -167,5 +132,46 @@ body {
 
 .edit-btn:hover {
     background-color: #0158b4;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 수정 입력창 */
+.textarea-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* 수직 가운데 정렬 */
+}
+
+.textarea-wrapper textarea {
+    flex: 1;
+    width: calc(100% - 56px);
+    /* 버튼 너비를 제외한 나머지 영역 */
+    height: 60px;
+    margin: 10px 0px;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.textarea-wrapper .save-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: rgb(130, 216, 2);
+    color: white;
+    width: 56px;
+    height: 50px;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.textarea-wrapper .save-btn:hover {
+    background-color: rgb(77, 128, 0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
