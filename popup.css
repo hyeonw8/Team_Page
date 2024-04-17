@@ -1,40 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
-*,
-
-body{
-	
-}
-p{
-	
-}
 
 .img1 {
-  background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbko9_8nC2Lfmn3JINo14lDLTvl2BzOmpih_Of5EGcRw&s) no-repeat;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbko9_8nC2Lfmn3JINo14lDLTvl2BzOmpih_Of5EGcRw&s)
+    no-repeat;
 }
 
 .img2 {
-  background:url(https://velog.velcdn.com/images/hyeonw8/profile/2dfb442b-99bd-4901-8029-353b619268bb/image.jpeg) no-repeat;
+  background: url(https://velog.velcdn.com/images/hyeonw8/profile/2dfb442b-99bd-4901-8029-353b619268bb/image.jpeg)
+    no-repeat;
 }
 
 .img3 {
-  background:url(https://cdns-images.dzcdn.net/images/artist/238f5524a401dfdd5cac685f0f7989bd/264x264.jpg) no-repeat;
+  background: url(https://cdns-images.dzcdn.net/images/artist/238f5524a401dfdd5cac685f0f7989bd/264x264.jpg)
+    no-repeat;
 }
 
 .img4 {
-  background:url(https://search.pstatic.net/common/?src=http://blogfiles.naver.net/MjAyNDAzMTJfNTAg/MDAxNzEwMjI4MTI4NDUy.7Yh-L0x-kdwNVguROM7Mt-HXSDwsLLIaNwztWy5rRc8g.4sClDH2kV3FyG8mP2NMgOHAwVod4OU9Vyr70Rhe-kwwg.JPEG/KakaoTalk_20240312_155838942_15.jpg&type=ff332_332) no-repeat;
+  background: url(https://search.pstatic.net/common/?src=http://blogfiles.naver.net/MjAyNDAzMTJfNTAg/MDAxNzEwMjI4MTI4NDUy.7Yh-L0x-kdwNVguROM7Mt-HXSDwsLLIaNwztWy5rRc8g.4sClDH2kV3FyG8mP2NMgOHAwVod4OU9Vyr70Rhe-kwwg.JPEG/KakaoTalk_20240312_155838942_15.jpg&type=ff332_332)
+    no-repeat;
 }
 
 .img5 {
-  background:url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbJXIsb%2FbtsGIWPnmf4%2FzCUIlVhxihmM4ubvYvO4n1%2Fimg.png) no-repeat;
+  background: url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbJXIsb%2FbtsGIWPnmf4%2FzCUIlVhxihmM4ubvYvO4n1%2Fimg.png)
+    no-repeat;
 }
 
-.popup-code{
+.popup-code {
   display: flex;
   justify-content: space-evenly;
 }
 
-.section{
-  
+.section {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -42,19 +38,18 @@ p{
   -ms-flex-pack: center;
   justify-content: center;
 }
-.full-height{
+.full-height {
   min-height: 40vh;
 }
 
-[type="checkbox"]:checked,
-[type="checkbox"]:not(:checked){
+[type='checkbox']:checked,
+[type='checkbox']:not(:checked) {
   position: absolute;
   left: -9999px;
 }
 
 .modal-btn:checked + label,
-.modal-btn:not(:checked) + label{
-  
+.modal-btn:not(:checked) + label {
   background-position: center;
   background-size: cover;
   position: relative;
@@ -67,7 +62,7 @@ p{
   border-radius: 4px;
   width: 240px;
   letter-spacing: 1px;
-  display: -webkit-inline-flex; 
+  display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-align-items: center;
@@ -83,18 +78,17 @@ p{
   align-self: center;
   border: none;
   cursor: pointer;
-  
-  
-  box-shadow: 0 12px 35px 0 rgba(16,39,112,.25);
+
+  box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
 }
-.modal-btn:not(:checked) + label:hover{
+.modal-btn:not(:checked) + label:hover {
   background-color: #ffeba7;
   color: #102770;
   opacity: 0.5;
 }
 
 .modal-btn:checked + label:after,
-.modal-btn:not(:checked) + label:after{
+.modal-btn:not(:checked) + label:after {
   position: fixed;
   top: 30px;
   right: 30px;
@@ -108,25 +102,26 @@ p{
   background-color: #ffeba7;
   color: #102770;
   font-family: 'unicons';
-  content: '\eac6'; 
-  box-shadow: 0 12px 25px 0 rgba(16,39,112,.25);
+  content: 'x';
+  box-shadow: 0 12px 25px 0 rgba(16, 39, 112, 0.25);
   transition: all 200ms linear;
   opacity: 0;
   pointer-events: none;
   transform: translateY(20px);
 }
 .modal-btn:checked + label:hover:after,
-.modal-btn:not(:checked) + label:hover:after{
+.modal-btn:not(:checked) + label:hover:after {
   background-color: #102770;
   color: #ffeba7;
 }
-.modal-btn:checked + label:after{
-  transition: opacity 300ms 300ms ease, transform 300ms 300ms ease, background-color 250ms linear, color 250ms linear;
+.modal-btn:checked + label:after {
+  transition: opacity 300ms 300ms ease, transform 300ms 300ms ease,
+    background-color 250ms linear, color 250ms linear;
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
-.modal{
+.modal {
   position: fixed;
   display: block;
   display: -ms-flexbox;
@@ -142,12 +137,12 @@ p{
   height: 100%;
   z-index: 100;
   overflow-x: hidden;
-  background-color: rgba(31,32,41,.75);
+  background-color: rgba(31, 32, 41, 0.75);
   pointer-events: none;
   opacity: 0;
   transition: opacity 250ms 700ms ease;
 }
-.modal-btn:checked ~ .modal{
+.modal-btn:checked ~ .modal {
   pointer-events: auto;
   opacity: 1;
   transition: all 300ms ease-in-out;
@@ -163,10 +158,10 @@ p{
   border-radius: 4px;
   overflow: hidden;
   padding-bottom: 20px;
-  background-color: #fff;
-    -ms-flex-item-align: center;
-    align-self: center;
-    box-shadow: 0 12px 25px 0 rgba(199,175,189,.25);
+  background-color: var(--modalWrap-bg);
+  -ms-flex-item-align: center;
+  align-self: center;
+  box-shadow: 0 12px 25px 0 rgba(199, 175, 189, 0.25);
   opacity: 0;
   transform: scale(0.6);
   transition: opacity 250ms 250ms ease, transform 300ms 250ms ease;
@@ -179,25 +174,23 @@ p{
 .modal-wrap p {
   padding: 20px 30px 0 30px;
 }
-.modal-btn:checked ~ .modal .modal-wrap{
+.modal-btn:checked ~ .modal .modal-wrap {
   opacity: 1;
   transform: scale(1);
   transition: opacity 250ms 500ms ease, transform 350ms 500ms ease;
 }
 
-
 @media screen and (max-width: 500px) {
-	.modal-wrap {
-		width: calc(100% - 40px);
-		padding-bottom: 15px;
-	}
-	.modal-wrap p {
-	  padding: 15px 20px 0 20px;
-	}
+  .modal-wrap {
+    width: calc(100% - 40px);
+    padding-bottom: 15px;
+  }
+  .modal-wrap p {
+    padding: 15px 20px 0 20px;
+  }
 }
 
 .container {
-    
   display: flex;
   flex-wrap: wrap;
   padding: 2em 1em;
@@ -206,23 +199,23 @@ p{
 
 .column {
   width: 100%;
-  
-  padding: 0.5em 0; 
+
+  padding: 0.5em 0;
 }
 
 .card {
   box-shadow: 0 0 2.2em rgba(25, 0, 58, 0.15);
   padding: 3.5em 1em;
   border-radius: 0.6em;
-  color: #1f003b;
+  color: var(--modalCard-ft);
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: var(--modalCard-bg);
 }
 
 .card .img-container {
   width: 8em;
   height: 8em;
-  
+
   padding: 0.5em;
   border-radius: 50%;
   margin: 0 auto 2em auto;
@@ -233,11 +226,11 @@ p{
   border-radius: 50%;
 }
 
-.card h1{
+.card h1 {
   font-weight: 500;
 }
 
-.card p{
+.card p {
   font-weight: 300;
   text-transform: uppercase;
   margin: 2em 0 2em 0;
@@ -251,6 +244,28 @@ p{
 }
 
 .card:hover {
-  background: linear-gradient(#6045ea, #8567f7);
+  background: linear-gradient(#66a9e0, #5381ca);
   color: #ffffff;
+}
+
+/* dark mode style */
+:root {
+  --body-bg: white;
+  --body-ft: black;
+  --modalWrap-bg: white;
+  --modalCard-bg: #fff;
+  --modalCard-ft: #1f003b;
+  --card-gr-bg1: #66a9e0;
+  --card-gr-bg2: #5381ca;
+
+}
+
+:root.dark {
+  --body-bg: rgb(54, 54, 54);
+  --body-ft: rgb(210, 210, 210);
+  --modalWrap-bg: rgba(54, 54, 54, 0.672);
+  --modalCard-bg: #41464b;
+  --modalCard-ft: white;
+  --card-gr-bg1: #4e81ac;
+  --card-gr-bg2: #2860ba;
 }

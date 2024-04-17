@@ -1,171 +1,201 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* 방명록 켜기 끄기 버튼 */
+#toggleBtn{
+  display: block;
+  margin: 0 auto;
+  border: none;
+  padding: 20px;
+  border-radius: 16px;
+  font-size: 30px;
+  margin-bottom: 16px;
 }
 
 /* 방명록 폼 */
 #guestbook {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 #guestbook-section {
-    width: 800px;
-    text-align: left;
-    margin: 30px auto;
+  width: 800px;
+  text-align: left;
+  margin: 30px auto;
 }
 
 #guestbook-form {
-    width: 800px;
-    margin: 20px auto 40px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+  width: 800px;
+  margin: 20px auto 40px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: var(--body-bg);
 }
 
-#guestbook-form input[type="text"],
-#guestbook-form input[type="password"] {
-    padding: 5px;
-    margin: 10px 0px;
-    border: 1px solid #d4d4d4;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#guestbook-form input[type='text'],
+#guestbook-form input[type='password'] {
+  padding: 5px;
+  margin: 10px 0px;
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--body-bg);
+  color: var(--body-ft);
 }
+
 /* 수정 입력창 */
-        .textarea-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-            /* 수직 가운데 정렬 */
-        }
+.textarea-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* 수직 가운데 정렬 */
+}
 
-        .textarea-wrapper textarea {
-            flex: 1;
-            width: calc(100% - 56px);
-            /* 버튼 너비를 제외한 나머지 영역 */
-            height: 60px;
-            margin: 10px 0px;
-            border: 1px solid #d4d4d4;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+.textarea-wrapper textarea {
+  flex: 1;
+  width: calc(100% - 56px);
+  /* 버튼 너비를 제외한 나머지 영역 */
+  height: 60px;
+  margin: 10px 0px;
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-        .textarea-wrapper .save-btn {
-            position: absolute;
-            top: 50%;            
-            right: 0;
-            transform: translateY(-50%);                        
-            background-color: rgb(130, 216, 2);
-            color: white;
-            width: 56px;
-            height: 50px;
-            border: none;
-            padding: 10px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-right: 10px;
-        }
+.textarea-wrapper .save-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: rgb(130, 216, 2);
+  color: white;
+  width: 56px;
+  height: 50px;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
 
-        .textarea-wrapper .save-btn:hover {
-            background-color: rgb(77, 128, 0);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+.textarea-wrapper .save-btn:hover {
+  background-color: rgb(77, 128, 0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 .name-password {
-    display: flex;
+  display: flex;
 }
 
 .user-info {
-    margin-right: 30px;
+  margin-right: 30px;
 }
 
 #guestbook-form textarea {
-    width: 100%;
-    margin: 10px 0px;
-    border: 1px solid #d4d4d4;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    resize: none;
+  width: 100%;
+  margin: 10px 0px;
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  resize: none;
+  background-color: var(--body-bg);
+  color: var(--body-ft);
 }
 
-#guestbook-form label[for="name"] {
+/* #guestbook-form label[for="name"] {
     color: #333;
+} */
+
+#guestbook-form > button[type='submit'] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#guestbook-form>button[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#guestbook-form>button[type="submit"]:hover {
-    background-color: #0158b4;
+#guestbook-form > button[type='submit']:hover {
+  background-color: #0158b4;
 }
 
 /* 방명록 표시 */
-
 #guestbook-entries {
-    margin: 20px auto 40px;
+  margin: 20px auto 40px;
 }
 
-.guestbook-entry {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 820px;
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 10px;
+.guestbook-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 820px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-.guestbook-entry p {
-    margin: 0;
-    padding: 0;
-    flex: 1;
+.guestbook-container p {
+  margin: 0;
+  padding: 0;
+  flex: 1;
 }
 
-.guestbook-entry strong {
-    color: #333;
+.guestbook-container strong {
+  color: #333;
+}
+
+.nameMessage .userName {
+  margin-bottom: 10px;
 }
 
 /* 삭제버튼 */
 .delete-btn {
-    background-color: rgb(241, 81, 81);
-    color: white;
-    border: none;
-    padding: 10px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 5px;
+  background-color: rgb(241, 81, 81);
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 5px;
 }
 
 .delete-btn:hover {
-    background-color: rgb(212, 35, 35);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgb(212, 35, 35);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* 수정버튼 */
 .edit-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .edit-btn:hover {
-    background-color: #0158b4;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #0158b4;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* dark mode style */
+:root {
+  --body-bg: white;
+  --body-ft: black;
+}
+
+:root.dark {
+  --body-bg: rgb(54, 54, 54);
+  --body-ft: rgb(210, 210, 210);
 }
