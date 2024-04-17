@@ -102,7 +102,7 @@
   background-color: #ffeba7;
   color: #102770;
   font-family: 'unicons';
-  content: 'x';
+  content: '\eac6';
   box-shadow: 0 12px 25px 0 rgba(16, 39, 112, 0.25);
   transition: all 200ms linear;
   opacity: 0;
