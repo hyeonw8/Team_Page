@@ -16,7 +16,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="mode.css" />
     <link rel="stylesheet" href="guestbook.css" />
     <link
       rel="stylesheet"
@@ -24,16 +23,12 @@
     />
     <link rel="stylesheet" href="popup.css" />
     <script>
-      // jquery 이용
-      // $(document).ready(function () {
-      //   $('.toast').toast('show');
-      // });
-
-      // js
-      document.addEventListener('DOMContentLoaded', () => {
-        let myAlert = document.querySelector('.toast');
-        let bsAlert = new bootstrap.Toast(myAlert);
-        bsAlert.show();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const toastElList = [].slice.call(document.querySelectorAll('.toast'));
+        const toastList = toastElList.map(function (toastEl) {
+          return new bootstrap.Toast(toastEl);
+        });
+        toastList.forEach((toast) => toast.show());
       });
     </script>
   </head>
