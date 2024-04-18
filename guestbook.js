@@ -35,10 +35,13 @@ document.getElementById("guestbook-form").addEventListener("submit", async (even
             message: message,
             password: password,
             timestamp: Number(new Date()) // 등록 순으로 정렬하기 위해
-        });
-        window.alert("등록 성공");
+        });        
         // 페이지 새로고침
-        window.location.reload();
+        // window.location.reload();
+        document.getElementById("name").value = "";
+        document.getElementById("message").value = "";
+        document.getElementById("password").value = "";
+        displayGuestbookEntry(docRef.id, { name, message }); // 등록할 때마다 새로고침 하는 것을 피하고 displayGuestbookEntry()실행
     } catch (error) {
         // 오류 메시지 표시
         console.error("Error adding document: ", error);
@@ -49,12 +52,8 @@ document.getElementById("guestbook-form").addEventListener("submit", async (even
 // Firebase에서 방명록 항목 가져오기
 async function fetchGuestbookEntries() {
     const querySnapshot = await getDocs(
-        query(collection(db, "guestbook"), orderBy("timestamp", "desc"))
+        query(collection(db, "guestbook"), orderBy("timestamp", "asc")) // desc 내림차순 -> asc 오름차순으로 변경
     );
-    // querySnapshot.forEach((doc) => {
-    //     const entry = doc.data();
-    //     displayGuestbookEntry(doc.id, entry); // 문서 ID도 전달
-    // });
     for (const doc of querySnapshot.docs) { // 비동기 배열 순회 
         const entry = doc.data();
         displayGuestbookEntry(doc.id, entry);
@@ -78,7 +77,7 @@ function displayGuestbookEntry(docId, entry) {
        </div>
      </div>  
      `;
-    guestbookEntriesDiv.appendChild(entryDiv);
+    guestbookEntriesDiv.prepend(entryDiv); // appendChild-> prepend로 변경 
 }
 
 // 삭제 버튼 클릭 이벤트 처리
@@ -112,16 +111,15 @@ document.addEventListener("click", async (event) => {
 document.addEventListener("click", async (event) => {
     if (event.target.classList.contains("edit-btn")) {
         const docId = event.target.getAttribute("data-doc-id");
-        const parentDiv = event.target.parentElement; // 수정 버튼의 부모 요소인 div 가져오기
-        const messageSpan = parentDiv.querySelector("p"); // 해당하는 부모요소에서 메시지 <p> 요소
+        const parentDiv = event.target.closest(".guestbook-entry"); // (1)
+        const messageParagraph = parentDiv.querySelector(".userMessage"); // (2) => 방명록 항목을 화면에 표시부분 수정으로 인한 오류 수정
 
         // 이미 textarea가 존재하는지 확인
         const existingTextarea = parentDiv.querySelector(".textarea-wrapper textarea");
         if (existingTextarea) {
             return; // 이미 textarea가 있으면 함수를 종료
         }
-        
-        const name = messageSpan.textContent.split(": ")[0];
+               
         const promptPassword = window.prompt("비밀번호를 입력하세요.",);
         const userInfo = await getDoc(doc(db, "guestbook", docId));
         const userPassword = userInfo.data().password;
@@ -142,11 +140,6 @@ document.addEventListener("click", async (event) => {
              textareaWrapper.appendChild(textarea);
              textareaWrapper.appendChild(saveButton);
 
-             // 수정 버튼과 textarea, 저장 버튼을 하나의 div에 묶음
-             const editDiv = document.createElement("div");
-             editDiv.classList.add("edit-div");
-             editDiv.appendChild(textareaWrapper);
-
              // 기존의 p 태그를 숨기고 수정 영역(div)을 추가함
              messageParagraph.style.display = "none";
              parentDiv.appendChild(editDiv);
@@ -162,7 +155,7 @@ document.addEventListener("click", async (event) => {
                      // 업데이트된 메시지를 화면에 반영
                      messageParagraph.textContent = newMessage;
                      messageParagraph.style.display = ""; // p 태그 보이게 함
-                     editDiv.remove(); // 수정 영역(div) 제거
+                     textareaWrapper.remove(); // 수정 영역(div) 제거
                      window.alert("메시지가 업데이트되었습니다.");
 
                  } catch (error) {
@@ -170,6 +163,14 @@ document.addEventListener("click", async (event) => {
                      window.alert("메시지를 업데이트하는 동안 오류가 발생했습니다.");
                  }
              });
+            // textarea에 keydown 이벤트 리스너 추가
+            textarea.addEventListener("keydown", (event) => {
+                // 엔터 키가 입력되었을 때
+                if (event.key === "Enter") {
+                    // 저장 버튼 클릭 이벤트 호출
+                    saveButton.click();
+                }
+            });
         } else {
             window.alert("비밀번호를 잘못 입력하셨습니다.");
         }
