@@ -205,7 +205,6 @@
   --body-ft: black;
   
 }
-
 :root.dark {
   --body-bg: rgb(54, 54, 54);
   --body-ft: rgb(210, 210, 210);
