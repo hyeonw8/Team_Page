@@ -15,6 +15,7 @@ const firebaseConfig = {
 };
 
 
+
 // Firebase 인스턴스 초기화
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -35,16 +36,15 @@ document.getElementById("guestbook-form").addEventListener("submit", async (even
             message: message,
             password: password,
             timestamp: Number(new Date()) // 등록 순으로 정렬하기 위해
-        });    
-        // 페이지 새로고침
-        // window.location.reload();
+        });
+
         document.getElementById("name").value = "";
         document.getElementById("message").value = "";
         document.getElementById("password").value = "";
-        displayGuestbookEntry(docRef.id, { name, message }); // 등록할 때마다 새로고침 하는 것을 피하고 displayGuestbookEntry()실행
+        displayGuestbookEntry(docRef.id, { name, message });
     } catch (error) {
         // 오류 메시지 표시
-        console.error("Error adding document: ", error);
+        console.error("Error adding document: ", error.message);
         window.alert("방명록을 제출하는 동안 오류가 발생했습니다.");
     }
 });
@@ -52,7 +52,7 @@ document.getElementById("guestbook-form").addEventListener("submit", async (even
 // Firebase에서 방명록 항목 가져오기
 async function fetchGuestbookEntries() {
     const querySnapshot = await getDocs(
-        query(collection(db, "guestbook"), orderBy("timestamp", "asc")) // desc 내림차순 -> asc 오름차순으로 변경
+        query(collection(db, "guestbook"), orderBy("timestamp", "asc"))
     );
     for (const doc of querySnapshot.docs) { // 비동기 배열 순회 
         const entry = doc.data();
@@ -77,7 +77,7 @@ function displayGuestbookEntry(docId, entry) {
        </div>
      </div>  
      `;
-    guestbookEntriesDiv.prepend(entryDiv); // appendChild-> prepend로 변경 
+    guestbookEntriesDiv.prepend(entryDiv);
 }
 
 // 삭제 버튼 클릭 이벤트 처리
@@ -95,7 +95,7 @@ document.addEventListener("click", async (event) => {
                 // Firestore에서 문서 삭제
                 await deleteDoc(doc(db, "guestbook", docId));
                 // 삭제한 항목 제거
-                event.target.parentElement.remove();
+                event.target.closest(".guestbook-entry").remove();
                 console.log("Document deleted successfully."); //삭제 성공 메시지 출력
             } catch (error) {
                 console.error("Error deleting document: ", error);
@@ -111,58 +111,59 @@ document.addEventListener("click", async (event) => {
 document.addEventListener("click", async (event) => {
     if (event.target.classList.contains("edit-btn")) {
         const docId = event.target.getAttribute("data-doc-id");
-        const parentDiv = event.target.closest(".guestbook-entry"); // (1)
-        const messageParagraph = parentDiv.querySelector(".userMessage"); // (2) => 방명록 항목을 화면에 표시부분 수정으로 인한 오류 수정
+        const parentDiv = event.target.closest(".guestbook-entry");
+        const messageParagraph = parentDiv.querySelector(".userMessage");
 
         // 이미 textarea가 존재하는지 확인
         const existingTextarea = parentDiv.querySelector(".textarea-wrapper textarea");
         if (existingTextarea) {
             return; // 이미 textarea가 있으면 함수를 종료
         }
-               
-        const promptPassword = window.prompt("비밀번호를 입력하세요.",);
+
+        const promptPassword = window.prompt("비밀번호를 입력하세요.");
         const userInfo = await getDoc(doc(db, "guestbook", docId));
         const userPassword = userInfo.data().password;
 
         if (promptPassword == userPassword) {
             // 새로운 textarea 생성
-             const textarea = document.createElement("textarea");
-             textarea.placeholder = "수정할 메시지를 입력하세요";
+            const textarea = document.createElement("textarea");
+            textarea.placeholder = "수정할 메시지를 입력하세요";
 
             // 저장 버튼 생성
-             const saveButton = document.createElement("button");
-             saveButton.textContent = " 저장";
-             saveButton.classList.add("save-btn");
+            const saveButton = document.createElement("button");
+            saveButton.textContent = " 저장";
+            saveButton.classList.add("save-btn");
 
-             // textarea와 저장 버튼을 감싸는 div 생성
-             const textareaWrapper = document.createElement("div");
-             textareaWrapper.classList.add("textarea-wrapper");
-             textareaWrapper.appendChild(textarea);
-             textareaWrapper.appendChild(saveButton);
+            // textarea와 저장 버튼을 감싸는 div 생성
+            const textareaWrapper = document.createElement("div");
+            textareaWrapper.classList.add("textarea-wrapper");
+            textareaWrapper.appendChild(textarea);
+            textareaWrapper.appendChild(saveButton);
 
-             // 기존의 p 태그를 숨기고 수정 영역(div)을 추가함
-             messageParagraph.style.display = "none";
-             parentDiv.appendChild(editDiv);
+            // 기존의 p 태그를 숨기고 수정 영역(div)을 추가함
+            messageParagraph.style.display = "none";
+            parentDiv.appendChild(textareaWrapper);
 
-             // 저장 버튼 클릭 이벤트 처리
-             saveButton.addEventListener("click", async () => {
-                 const newMessage = textarea.value;
-                 try {
-                     // Firestore에서 문서 업데이트
-                     await updateDoc(doc(db, "guestbook", docId), {
-                         message: newMessage
-                     });
-                     // 업데이트된 메시지를 화면에 반영
-                     messageParagraph.textContent = newMessage;
-                     messageParagraph.style.display = ""; // p 태그 보이게 함
-                     textareaWrapper.remove(); // 수정 영역(div) 제거
-                     window.alert("메시지가 업데이트되었습니다.");
+            // 저장 버튼 클릭 이벤트 처리
+            saveButton.addEventListener("click", async () => {
+                const newMessage = textarea.value;
+                try {
+                    // Firestore에서 문서 업데이트
+                    await updateDoc(doc(db, "guestbook", docId), {
+                        message: newMessage
+                    });
+                    // 업데이트된 메시지를 화면에 반영
+                    messageParagraph.textContent = newMessage;
+                    messageParagraph.style.display = ""; // p 태그 보이게 함
+                    textareaWrapper.remove(); // 수정 영역(div) 제거
+                    window.alert("메시지가 업데이트되었습니다.");
 
-                 } catch (error) {
-                     console.error("Error updating document: ", error);
-                     window.alert("메시지를 업데이트하는 동안 오류가 발생했습니다.");
-                 }
-             });
+                } catch (error) {
+                    console.error("Error updating document: ", error);
+                    window.alert("메시지를 업데이트하는 동안 오류가 발생했습니다.");
+                }
+            });
+
             // textarea에 keydown 이벤트 리스너 추가
             textarea.addEventListener("keydown", (event) => {
                 // 엔터 키가 입력되었을 때
@@ -174,9 +175,9 @@ document.addEventListener("click", async (event) => {
         } else {
             window.alert("비밀번호를 잘못 입력하셨습니다.");
         }
-
     }
 });
+
 
 // 페이지 로드시 방명록 항목 가져오기
 fetchGuestbookEntries();
