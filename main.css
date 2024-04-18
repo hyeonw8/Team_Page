@@ -23,6 +23,11 @@ body {
   color: var(--body-ft);
 }
 
+#wrap {
+  height: auto;
+  min-height: 100%;
+}
+
 /* header */
 #header {
   height: 220px;
@@ -75,7 +80,7 @@ h1 {
 /* content 전체 설정 */
 #content {
   width: 100%;
-  height: 1300px;
+  /* height: 1300px; */
 }
 
 /* team 약속, 목표  */
@@ -139,6 +144,7 @@ h1 {
 }
 
 #footer {
+  position: relative;
   background: #dcdcdc32;
   height: 200px;
   display: flex;
