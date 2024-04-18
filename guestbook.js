@@ -30,12 +30,12 @@ document.getElementById("guestbook-form").addEventListener("submit", async (even
 
     try {
         // Firestore에 데이터 추가
-        await addDoc(collection(db, "guestbook"), {
+        const docRef = await addDoc(collection(db, "guestbook"), {
             name: name,
             message: message,
             password: password,
             timestamp: Number(new Date()) // 등록 순으로 정렬하기 위해
-        });        
+        });    
         // 페이지 새로고침
         // window.location.reload();
         document.getElementById("name").value = "";
