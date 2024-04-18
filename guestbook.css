@@ -1,5 +1,5 @@
 /* 방명록 켜기 끄기 버튼 */
-#toggleBtn{
+#toggleBtn {
   display: block;
   margin: 0 auto;
   border: none;
@@ -8,16 +8,11 @@
   font-size: 30px;
   margin-bottom: 16px;
 }
-/* 방명록 켜기 끄기 버튼 */
-#toggleBtn{
-    display: block;
-    margin: 0 auto;
-    border: none;
-    padding: 20px;
-    border-radius: 16px;
-    font-size: 30px;
-    margin-bottom: 16px;
+
+#toggleBtn:hover {
+  background-color: darkgray;
 }
+
 /* 방명록 폼 */
 #guestbook {
   display: flex;
@@ -203,7 +198,6 @@
 :root {
   --body-bg: white;
   --body-ft: black;
-  
 }
 :root.dark {
   --body-bg: rgb(54, 54, 54);
