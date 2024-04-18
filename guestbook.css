@@ -1,8 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-}
-
 /* 방명록 켜기 끄기 버튼 */
 #toggleBtn{
   display: block;
