@@ -156,9 +156,17 @@
 .guestbook-container strong {
   color: var(--body-ft);
 }
-
+.nameMessage {
+  max-width: 660px;
+}
 .nameMessage .userName {
   margin-bottom: 10px;
+}
+
+/* 버튼 크기 위치 고정*/
+.buttons {
+  position: absolute;  
+  right: 10px; 
 }
 
 /* 삭제버튼 */
