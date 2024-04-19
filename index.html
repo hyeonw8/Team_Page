@@ -29,8 +29,7 @@
   </head>
   <body>
     <div id="wrap">
-      <!-- header -->
-      <div id="header">
+      <header id="header">
         <div id="header_container">
           <label class="switch">
             <button id="switchBtn" class="btn btn-primary btn-layer-3_1">
@@ -44,34 +43,32 @@
             <p>우리 조의 이야기가 담겨있는 소개 페이지</p>
           </div>
         </div>
-      </div>
-      <div class="toast-container top-0 end-0 p-3">
-        <div
-          class="toast"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-        >
-          <div class="toast-header">
-            <div id="toast_img">🔔</div>
-            <strong class="me-auto">열심히 하조</strong>
-            <small class="text-muted">1 mins ago</small>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="toast"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="toast-body">
-            안녕하세요! 열심히 하조의 페이지입니다 👋
+        <div class="toast-container top-0 end-0 p-3">
+          <div
+            class="toast"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div class="toast-header">
+              <div id="toast_img">🔔</div>
+              <strong class="me-auto">열심히 하조</strong>
+              <small class="text-muted">1 mins ago</small>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="toast-body">
+              안녕하세요! 열심히 하조의 페이지입니다 👋
+            </div>
           </div>
         </div>
-      </div>
-      <!-- content -->
-      <div id="content">
-        <!-- 팀 약속, 목표 -->
-        <div id="team_plan">
+      </header> 
+      <main id="content">
+        <section id="team_plan">
           <div class="team_p team_goal">
             <p>우리 팀의 목표</p>
             <span>🚩 1인분 할 수 있는 개발자 되기!!!</span><br />
@@ -84,12 +81,11 @@
               >🎲 모르는 거나, 궁금한 점 있으면 바로바로 물어보고 답해주기!
             </span>
           </div>
-        </div>
-        <div class="team_ex">
+        </section>
+        <section class="team_ex">
           <h3>✨ 열심히 하조의 조원을 소개합니다 ✨</h3>
-        </div>
-        <!-- 팀 이미지 -->
-        <div class="popup-code">
+        </section>
+        <section class="popup-code">
           <div class="section full-height">
             <input
               class="modal-btn"
@@ -140,7 +136,6 @@
               </div>
             </div>
           </div>
-
           <div class="section full-height">
             <input
               class="modal-btn"
@@ -186,7 +181,6 @@
               </div>
             </div>
           </div>
-
           <div class="section full-height">
             <input
               class="modal-btn"
@@ -231,7 +225,6 @@
               </div>
             </div>
           </div>
-
           <div class="section full-height">
             <input
               class="modal-btn"
@@ -329,12 +322,10 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- 방명록 -->
+        </section>
         <button id="toggleBtn" type="button">방명록 끄기</button>
-        <div id="guestbook">
+        <section id="guestbook">
           <h1 id="guestbook-section"><span>💬</span> 방명록</h1>
-
           <form id="guestbook-form">
             <div class="name-password">
               <div class="user-info">
@@ -354,25 +345,22 @@
                 /><br />
               </div>
             </div>
-
             <label for="message">메시지</label><br />
             <textarea id="message" name="message" rows="4" required></textarea
             ><br />
             <button type="submit">등록</button>
           </form>
-
           <div id="guestbook-entries">
             <!-- firebase로부터 받은 방명록 항목 표시 -->
           </div>
-        </div>
-      </div>
-      <!-- footer -->
-      <div id="footer">
+        </section>
+      </main>
+      <footer id="footer">
         <div>
           <p>개발자가 되기 위한 열정이 담긴 페이지</p>
           <p>@team_열심히 하조</p>
         </div>
-      </div>
+      </footer>
     </div>
     <script src="main.js"></script>
     <script type="module" src="guestbook.js"></script>
